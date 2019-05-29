@@ -16,7 +16,7 @@ class Desa extends Model
     */
 
     protected $table = 'desa';
-    // protected $primaryKey = 'id';
+    protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
     protected $fillable = ['nama_desa','kode_pos'];
@@ -28,7 +28,9 @@ class Desa extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-
+    public function penduduk(){
+        return $this->hasOne('App\Models\Penduduk');
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

@@ -33,6 +33,20 @@ class PendudukCrudController extends CrudController
         | CrudPanel Configuration
         |--------------------------------------------------------------------------
         */
+        //ADD COLUMN NUMBER INDEX
+        $this->crud->addColumn([
+            'name' => 'row_number',
+            'type' => 'row_number',
+            'label' => 'No',
+            'orderable' => false,
+        ])->makeFirstColumn();
+
+        // // ADD COLUMN
+        // $this->crud->addColumn([   // Select
+        //     'label' => "ID", //table column heading
+        //     'name' => 'id', // the db column for the foreign key
+        // ]);
+
         // ADD COLUMN
         $this->crud->addColumn([   // Select
             'label' => "Nama Desa", //table column heading
@@ -52,6 +66,8 @@ class PendudukCrudController extends CrudController
             'attribute' => 'nama_desa', // foreign key attribute that is shown to user
             'model' => "App\Models\Desa", // foreign key model
         ]);
+        
+
         
 
         // TODO: remove setFromDb() and manually define Fields and Columns

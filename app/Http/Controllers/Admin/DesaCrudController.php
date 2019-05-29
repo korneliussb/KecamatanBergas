@@ -33,6 +33,13 @@ class DesaCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
+        $this->crud->addColumn([
+            'name' => 'row_number',
+            'type' => 'row_number',
+            'label' => 'No',
+            'orderable' => false,
+        ])->makeFirstColumn();
+
         // TODO: remove setFromDb() and manually define Fields and Columns
         $this->crud->setFromDb();
 
